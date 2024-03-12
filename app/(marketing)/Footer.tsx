@@ -8,7 +8,7 @@ export const Footer = () => {
       <div className="max-w-screen-lg mx-auto flex items-center justify-evenly h-full">
         <Button variant="ghost" className="w-full">
           <Image
-            src="/AD - Andorra.svg"
+            src="hr.svg"
             alt="logo"
             width={32}
             height={40}
@@ -18,7 +18,7 @@ export const Footer = () => {
         </Button>
         <Button variant="ghost" className="w-full">
           <Image
-            src="/IL - Isreal.svg"
+            src="/it.svg"
             alt="Isreal"
             width={32}
             height={40}
@@ -26,19 +26,10 @@ export const Footer = () => {
           />
           Isreal
         </Button>
+
         <Button variant="ghost" className="w-full">
           <Image
-            src="/IN - India.svg"
-            alt="India"
-            width={32}
-            height={40}
-            className="mr-4 rounded-md"
-          />
-          India
-        </Button>
-        <Button variant="ghost" className="w-full">
-          <Image
-            src="/JP - Japan.svg"
+            src="/jp.svg"
             alt="Japan"
             width={32}
             height={40}
@@ -48,7 +39,7 @@ export const Footer = () => {
         </Button>
         <Button variant="ghost" className="w-full">
           <Image
-            src="/ZM - Zambia.svg"
+            src="/jp.svg"
             alt="Zambia"
             width={32}
             height={40}
@@ -58,8 +49,8 @@ export const Footer = () => {
         </Button>
         <Button variant="ghost" className="w-full">
           <Image
-            src="/CO - Colombia.svg"
-            alt="Colombia"
+            src="/hr.svg"
+            alt="Croatia"
             width={32}
             height={40}
             className="mr-4 rounded-md"
@@ -68,7 +59,7 @@ export const Footer = () => {
         </Button>
         <Button variant="ghost" className="w-full">
           <Image
-            src="/DE - Germany.svg"
+            src="/vercel.svg"
             alt="Germany"
             width={32}
             height={40}

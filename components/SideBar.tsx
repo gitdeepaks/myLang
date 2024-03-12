@@ -20,25 +20,21 @@ export const SideBar = ({ className }: Props) => {
     >
       <Link href="/learn">
         <div className="pt-8 pl-4 pb-7 flex items-center gap-x-3">
-          <Image src={"/logo.svg"} width={40} height={40} alt="Logo" />
+          <Image src={"/mascot.svg"} width={40} height={40} alt="Mascot" />
           <h1 className="text-2xl font-extrabold text-green-600 tracking-wide">
             myLang
           </h1>
         </div>
       </Link>
       <div className="flex flex-col gap-y-2 flex-1">
-        <SideBarItem label="Learn" iconSrc="/AD - Andorra.svg" href="/learn" />
+        <SideBarItem label="Learn" iconSrc="/learn.svg" href="/learn" />
         <SideBarItem
           label="LeaderBoard"
-          iconSrc="/AD - Andorra.svg"
+          iconSrc="/leaderboard.svg"
           href="/leaderboard"
         />
-        <SideBarItem
-          label="Quests"
-          iconSrc="/AD - Andorra.svg"
-          href="/quests"
-        />
-        <SideBarItem label="Shop" iconSrc="/AD - Andorra.svg" href="/shop" />
+        <SideBarItem label="Quests" iconSrc="/quests.svg" href="/quests" />
+        <SideBarItem label="Shop" iconSrc="/shop.svg" href="/shop" />
       </div>
       <div className="p-4">
         <ClerkLoading>
