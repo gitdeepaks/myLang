@@ -3,9 +3,10 @@ import React from "react";
 import { Button } from "./ui/button";
 import Image from "next/image";
 import { InfinityIcon } from "lucide-react";
+import { courses } from "@/db/schema";
 
 type Props = {
-  activeCourse: { imageSrc: string; title: string };
+  activeCourse: typeof courses.$inferSelect;
   hearts: number;
   points: number;
   hasActiveSunscription: boolean;
@@ -23,7 +24,7 @@ export const UserProgress = ({
         <Button variant="ghost">
           <Image
             src={activeCourse.imageSrc}
-            alt={activeCourse.title}
+            alt={activeCourse.title!}
             className="rounded-md border"
             width={32}
             height={32}
