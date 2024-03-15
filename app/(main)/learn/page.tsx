@@ -1,4 +1,4 @@
-import { getUserProgress } from "@/db/quesries";
+import { getUnits, getUserProgress } from "@/db/quesries";
 import { redirect } from "next/navigation";
 import { FeedWrapper } from "@/components/FeedWrapper";
 import { StrickyWrapper } from "@/components/StrickyWrapper";
@@ -8,8 +8,12 @@ import { UserProgress } from "@/components/UserProgress";
 
 const LearnPage = async () => {
   const userPrgressData = getUserProgress();
+  const unitesData = getUnits();
 
-  const [userProgress] = await Promise.all([userPrgressData]);
+  const [userProgress, units] = await Promise.all([
+    userPrgressData,
+    unitesData,
+  ]);
 
   if (!userProgress || !userProgress.activeCourse) {
     redirect("/courses");
@@ -27,6 +31,11 @@ const LearnPage = async () => {
       </StrickyWrapper>
       <FeedWrapper>
         <HeaDer title={userProgress.activeCourse.title!} />
+        {units.map((unit) => (
+          <div className="mb-10" key={unit.id}>
+            {JSON.stringify(unit)}
+          </div>
+        ))}
       </FeedWrapper>
     </div>
   );
