@@ -5,6 +5,7 @@ import { StrickyWrapper } from "@/components/StrickyWrapper";
 import React from "react";
 import { HeaDer } from "./HeaDer";
 import { UserProgress } from "@/components/UserProgress";
+import { Unit } from "./Unit";
 
 const LearnPage = async () => {
   const userPrgressData = getUserProgress();
@@ -33,7 +34,15 @@ const LearnPage = async () => {
         <HeaDer title={userProgress.activeCourse.title!} />
         {units.map((unit) => (
           <div className="mb-10" key={unit.id}>
-            {JSON.stringify(unit)}
+            <Unit
+              id={unit.id}
+              order={unit.order}
+              description={unit.description}
+              title={unit.title}
+              lessons={unit.lessons}
+              activeLession={undefined}
+              activeLessionPercentage={0}
+            />
           </div>
         ))}
       </FeedWrapper>
