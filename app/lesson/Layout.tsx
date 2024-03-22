@@ -4,7 +4,7 @@ type LayoutProps = {
   children: React.ReactNode;
 };
 
-const Layout = ({ children }: LayoutProps) => {
+const LessonLayout = ({ children }: LayoutProps) => {
   return (
     <div className="flex flex-col h-full">
       <div className="flex flex-col h-full w-full">{children}</div>
@@ -12,4 +12,4 @@ const Layout = ({ children }: LayoutProps) => {
   );
 };
 
-export default Layout;
+export default LessonLayout;
