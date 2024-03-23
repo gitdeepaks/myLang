@@ -119,7 +119,7 @@ const main = async () => {
         challengeId: 1,
         imageSrc: "/robot.svg",
         correct: false,
-        text: "la mujer",
+        text: "el robot",
         audioSrc: "/es_robot.mp3",
       },
     ]);
