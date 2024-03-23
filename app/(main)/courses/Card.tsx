@@ -4,8 +4,8 @@ import Image from "next/image";
 import React from "react";
 
 type CardProps = {
-  title: string;
   id: number;
+  title: string;
   imageScr: string;
   onClick: (id: number) => void;
   disabled?: boolean;

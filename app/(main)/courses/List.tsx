@@ -18,7 +18,10 @@ export const List = ({ courses, activeCoursesId }: ListProps) => {
 
   const handleClick = (id: number) => {
     if (pending) return;
-    if (id === activeCoursesId) return router.push(`/learn`);
+    if (id === activeCoursesId) {
+      return router.push(`/learn`);
+    }
+
     startTransition(() => {
       upsertUserProgress(id).catch(() => toast.error("Failed to start course"));
     });

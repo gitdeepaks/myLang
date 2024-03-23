@@ -1,8 +1,9 @@
 "use client";
-import { challengeOptions, challenges } from "@/db/schema";
 import React, { useState } from "react";
+import { challengeOptions, challenges } from "@/db/schema";
 import { Headerr } from "./Headerr";
 import { QuestionBubble } from "./QuestionBubble";
+import { Challangee } from "./Challange";
 
 type QuizProps = {
   initialPercentage: number;
@@ -32,6 +33,7 @@ export const Quiz = ({
   });
 
   const challenge = challenges[activeIndex];
+  const options = challenge?.chllangeOptions ?? [];
 
   const title =
     challenge.type == "ASSIST"
@@ -46,16 +48,23 @@ export const Quiz = ({
         hasActiveSubsCription={!!userSubscriptions?.isActive}
       />
       <div className="flex-1">
-        <div className="h-full flex items-center justify-center">
+        <div className="min-h-screen flex items-center justify-center">
           <div className="lg:min-h-[350px] lg:w-[600px] w-full px-6 lg:px-0 flex flex-col gap-y-12">
             <h1 className="text-lg lg:text-3xl text-center lg:text-start font-bold text-neutral-700">
               {title}
             </h1>
             <div className="">
-              {/* Change back to type assist */}
               {challenge.type === "ASSIST" && (
                 <QuestionBubble question={challenge.question} />
               )}
+              <Challangee
+                options={options}
+                onSelect={() => {}}
+                status="unanswered"
+                selectedOption={undefined}
+                disabled={false}
+                type={challenge.type}
+              />
             </div>
           </div>
         </div>
