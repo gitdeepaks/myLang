@@ -4,7 +4,7 @@ import { auth, currentUser } from "@clerk/nextjs";
 
 import { stripe } from "@/lib/stripe";
 import { absoluteUrl } from "@/lib/utils";
-import { getUserSubscription } from "@/db/queries";
+import { getUserSubscription } from "@/db/quesries";
 
 const returnUrl = absoluteUrl("/shop");
 
@@ -37,7 +37,7 @@ export const createStripeUrl = async () => {
         price_data: {
           currency: "USD",
           product_data: {
-            name: "Lingo Pro",
+            name: "myLang Pro",
             description: "Unlimited Hearts",
           },
           unit_amount: 2000, // $20.00 USD

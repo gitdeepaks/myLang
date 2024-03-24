@@ -128,7 +128,7 @@ export const refillHearts = async () => {
     throw new Error("Hearts are already full");
   }
 
-  if (currentUserProgress.points < POINTS_TO_REFILL) {
+  if (currentUserProgress.points < 5) {
     throw new Error("Not enough points");
   }
 
@@ -136,7 +136,7 @@ export const refillHearts = async () => {
     .update(userProgress)
     .set({
       hearts: 5,
-      points: currentUserProgress.points - POINTS_TO_REFILL,
+      points: currentUserProgress.points - 5,
     })
     .where(eq(userProgress.userId, currentUserProgress.userId));
 
