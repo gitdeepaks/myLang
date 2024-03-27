@@ -1,7 +1,7 @@
 import { FeedWrapper } from "@/components/FeedWrapper";
 import { StrickyWrapper } from "@/components/StrickyWrapper";
 import { UserProgress } from "@/components/UserProgress";
-import { getUserProgress } from "@/db/quesries";
+import { getUserProgress, getUserSubscription } from "@/db/quesries";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import React from "react";
@@ -9,7 +9,12 @@ import { Items } from "./Items";
 
 const ShopPage = async () => {
   const userPrhressData = getUserProgress();
-  const [userProgress] = await Promise.all([userPrhressData]);
+  const userSubsCriptionData = getUserSubscription();
+
+  const [userProgress, useSubsCription] = await Promise.all([
+    userPrhressData,
+    userSubsCriptionData,
+  ]);
 
   if (!userProgress || !userProgress.activeCourse) {
     redirect("/courses");
@@ -22,7 +27,7 @@ const ShopPage = async () => {
           activeCourse={userProgress.activeCourse}
           hearts={userProgress.hearts}
           points={userProgress.points}
-          hasActiveSunscription={false}
+          hasActiveSubscription={!!useSubsCription?.isActive}
         />
       </StrickyWrapper>
       <FeedWrapper>
@@ -37,7 +42,7 @@ const ShopPage = async () => {
           <Items
             hearts={userProgress.hearts}
             points={userProgress.points}
-            hasActiveSunscription={false}
+            hasActiveSunscription={!!useSubsCription?.isActive}
           />
         </div>
       </FeedWrapper>
