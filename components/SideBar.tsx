@@ -10,7 +10,7 @@ type Props = {
   className?: string;
 };
 
-export const SideBar = ({ className }: Props) => {
+export const Sidebar = ({ className }: Props) => {
   return (
     <div
       className={cn(
@@ -20,21 +20,21 @@ export const SideBar = ({ className }: Props) => {
     >
       <Link href="/learn">
         <div className="pt-8 pl-4 pb-7 flex items-center gap-x-3">
-          <Image src={"/mascot.svg"} width={40} height={40} alt="Mascot" />
+          <Image src="/mascot.svg" height={40} width={40} alt="Mascot" />
           <h1 className="text-2xl font-extrabold text-green-600 tracking-wide">
-            myLang
+            Lingo
           </h1>
         </div>
       </Link>
       <div className="flex flex-col gap-y-2 flex-1">
-        <SideBarItem label="Learn" iconSrc="/learn.svg" href="/learn" />
+        <SideBarItem label="Learn" href="/learn" iconSrc="/learn.svg" />
         <SideBarItem
-          label="LeaderBoard"
-          iconSrc="/leaderboard.svg"
+          label="Leaderboard"
           href="/leaderboard"
+          iconSrc="/leaderboard.svg"
         />
-        <SideBarItem label="Quests" iconSrc="/quests.svg" href="/quests" />
-        <SideBarItem label="Shop" iconSrc="/shop.svg" href="/shop" />
+        <SideBarItem label="quests" href="/quests" iconSrc="/quests.svg" />
+        <SideBarItem label="shop" href="/shop" iconSrc="/shop.svg" />
       </div>
       <div className="p-4">
         <ClerkLoading>

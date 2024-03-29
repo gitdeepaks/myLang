@@ -6,6 +6,8 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 import React from "react";
 import { Items } from "./Items";
+import { Promo } from "@/components/Promo";
+import { Quests } from "@/components/Quests";
 
 const ShopPage = async () => {
   const userPrhressData = getUserProgress();
@@ -20,6 +22,8 @@ const ShopPage = async () => {
     redirect("/courses");
   }
 
+  const isPro = !!useSubsCription?.isActive;
+
   return (
     <div className="flex flex-row-reverse gap-[48px] px-6">
       <StrickyWrapper>
@@ -27,8 +31,11 @@ const ShopPage = async () => {
           activeCourse={userProgress.activeCourse}
           hearts={userProgress.hearts}
           points={userProgress.points}
-          hasActiveSubscription={!!useSubsCription?.isActive}
+          hasActiveSubscription={isPro}
         />
+
+        {!isPro && <Promo />}
+        <Quests points={userProgress.points} />
       </StrickyWrapper>
       <FeedWrapper>
         <div className="w-full flex  flex-col items-center">
